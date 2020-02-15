@@ -31,10 +31,13 @@ def hotkey_pressed():
     keep_waiting_for_hotkey_press = False
   
   
-def wait_for_hotkey_press(hotkey_str):
+def wait_for_hotkey_press(hotkey_str, print_waiting_msg = False):
     k.add_hotkey(hotkey_str, hotkey_pressed)
+    
+    if print_waiting_msg:
+        print('Waiting for hotkey to be pressed: "', hotkey_str, '"...')
+    
     while(keep_waiting_for_hotkey_press):
-#         print('waiting')
         pass
 
         
